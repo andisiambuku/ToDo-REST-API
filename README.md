@@ -53,16 +53,3 @@ Make sure to set up the following environment variables in your `.env` file:
 - `DB_URI`: MongoDB connection string
 - `PORT`: Port number for the server (default is 3000)
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-### Code Style
-
-We follow TypeScript best practices and use ESLint for linting. The `.eslintrc.json` file in the root directory defines our code style rules.
-
-### Testing
-
-Unit tests are located in the `src/tests/` directory. To run tests, use the command `npm test`.
-
----
