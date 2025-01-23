@@ -6,7 +6,6 @@
 - [Notes on Implementation](#notes-on-implementation)
 - [API Endpoints](#api-endpoints)
 - [Environment Variables](#environment-variables)
-- [Contributing](#contributing)
 
 ## How to Run the Project
 
