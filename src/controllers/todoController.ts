@@ -26,16 +26,22 @@ export const getToDoById = async (req: Request, res: Response): Promise<void> =>
     }
 }
 
+
 export const createToDo = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { title, description } = req.body;
-        const newToDo = await toDoModel.create({ title, description })
+        const { title, description, completed } = req.body;
+        if (!title) {
+            res.status(400).json({ message: 'Title is required' });
+            return;
+        }
 
-        res.status(201).json(newToDo)
+        const newToDo = await toDoModel.create({ title, description, completed });
+        res.status(201).json(newToDo);
     } catch (error) {
-        res.status(500).json({ message: 'Error creating todo', error })
+        res.status(500).json({ message: 'Error creating todo', error });
     }
-}
+};
+
 
 export const updateToDo = async (req: Request, res: Response): Promise<void> => {
     try {
@@ -67,7 +73,7 @@ export const deleteToDo = async (req: Request, res: Response): Promise<void> => 
             return;
         }
         res.status(200).json({ message: 'Todo deleted successfully' })
-    } catch (error) {
+    } catch (error) { 
         res.status(500).json({ message: 'Error deleting todo', error })
     }
 }

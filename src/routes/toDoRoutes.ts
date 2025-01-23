@@ -2,8 +2,10 @@ import { createToDo, deleteToDo, getToDoById, getToDos, updateToDo } from "../co
 import express from 'express'
 const router = express.Router();
 
-router.get('/', getToDos);
-router.get('/:id', getToDoById);
-router.post('/', createToDo);
-router.put('/:id', updateToDo);
-router.delete('/:id', deleteToDo);
+router.get('/api/v1/todos', getToDos);
+router.get('/api/v1/todo/:id', getToDoById);
+router.post('/api/v1/todo/', createToDo);
+router.put('/api/v1/todo/:id', updateToDo);
+router.delete('/api/v1/todo/:id', deleteToDo);
+
+export default router;
